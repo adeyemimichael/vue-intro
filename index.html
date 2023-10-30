@@ -1,0 +1,30 @@
+<!-- FILEPATH: /Users/bishopakandeayobami/Desktop/vue-3 intro /index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Example</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+     <p>{{description}}</p>
+     <a :href="link">click here to learn more about Vue</a>
+     <img :src="image" alt="" id="image">
+     <p v-show="inStock">In stock right now</p>
+     <p v-show="onSale">we are selling </p>
+     <ul>
+     <li v-for="detail in details">{{detail}}</li>
+    </ul>
+    <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{variant.color}}</div>
+    <button class="button" v-on:click="addToCart" :disabled="!inStock">Add to Cart</button>
+    <button class="button" v-on:click="removeCart">Remove from Cart</button>
+    <div class="cart">Cart({{ cart }})</div>
+    </div>
+
+    <script src="main.js">
+     
+    </script>
+  </body>
+</html>
